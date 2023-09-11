@@ -17,6 +17,8 @@ class App
     @authors = []
     @labels = []
     @music_album_data = MusicManager.new
+    @game_data = GameManager.new
+    @author_data = AuthorManager.new
     load_data
   end
 
@@ -29,5 +31,7 @@ class App
 
   def load_data
     @songs = @music_album_data.load_music_album
+    @games = @game_data.load_game
+    @authors =
   end
 end

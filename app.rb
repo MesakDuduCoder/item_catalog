@@ -5,6 +5,8 @@ require_relative 'modules/genre_module'
 require_relative 'modules/author_module'
 require_relative 'modules/label_module'
 require_relative 'data_manager/music_manager'
+require_relative 'data_manager/game_manager'
+require_relative 'data_manager/author_manager'
 
 class App
   attr_accessor :books, :games, :music, :genre, :author, :label
@@ -17,6 +19,8 @@ class App
     @authors = []
     @labels = []
     @music_album_data = MusicManager.new
+    @game_data = GameManager.new
+    @author_data = AuthorManager.new
     load_data
   end
 
@@ -29,5 +33,7 @@ class App
 
   def load_data
     @songs = @music_album_data.load_music_album
+    @games = @game_data.load_games
+    @authors = @author_data.load_authors
   end
 end

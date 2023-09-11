@@ -1,6 +1,39 @@
 require_relative 'app'
 
 module Main
+  def self.add_book(app)
+    puts "\n"
+    publisher = nil
+    cover_state = nil
+    publish_date = nil
+  
+    loop do
+      puts 'Who is the publisher [Enter Publisher Name]:'
+      publisher = gets.chomp
+      break unless publisher.empty?
+      puts 'Please enter a value for the publisher.'
+    end
+  
+    loop do
+      puts 'What Is the cover\'s state like? [Enter good or bad]:'
+      cover_state = gets.chomp.downcase
+      if cover_state == "good" || cover_state == "bad"
+        break
+      else
+        puts 'Please enter "good" or "bad" for the cover state.'
+      end
+    end
+  
+    loop do
+      puts 'When was the book published [Enter date format year/month/date]:'
+      publish_date = gets.chomp
+      break unless publish_date.empty?
+      puts 'Please enter a value for the publish date.'
+    end
+  
+    app.create_book(publisher, cover_state, publish_date)
+  end
+
   def self.list_options
     puts "\n"
     puts 'Enter number to pick an option:'

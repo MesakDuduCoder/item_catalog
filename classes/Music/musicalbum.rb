@@ -9,4 +9,12 @@ class MusicAlbum < Item
         @id = Random.rand(1...1000)
         @on_spotify = on_spotify
     end
+
+    def can_be_archived?
+        if super == true && @on_spotify == true
+            true
+        else
+            false
+        end
+    end
 end

@@ -12,6 +12,22 @@ module Main
     app.create_game(multiplayer, last_played_at, publish_date)
   end
 
+  def self.add_mucicalbum(app)
+    puts "\n"
+    puts 'Is it on spotify [True/False]:'
+    on_spotify = gets.chomp
+    if %w[True true].include?(on_spotify)
+      on_spotify = true
+    elsif %w[False false].include?(on_spotify)
+      on_spotify = false
+    else
+      puts 'Invalid input'
+    end
+    puts 'When is album published [Enter date format year/month/date]:'
+    publish_date = gets.chomp
+    app.create_musicalbum(publish_date, on_spotify)
+  end
+
   def self.add_book(app)
     puts "\n"
     puts 'Who is the publisher [Enter Publisher Name]:'

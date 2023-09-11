@@ -1,4 +1,4 @@
-require_relative '../classes/Game/author.rb'
+require_relative '../classes/Game/author'
 
 module AuthorModule
   def list_authors

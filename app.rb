@@ -4,6 +4,7 @@ require_relative 'modules/music_module'
 require_relative 'modules/genre_module'
 require_relative 'modules/author_module'
 require_relative 'modules/label_module'
+require_relative 'data_manager/music_manager'
 
 class App
   attr_accessor :books, :games, :music, :genre, :author, :label
@@ -15,6 +16,8 @@ class App
     @genres = []
     @authors = []
     @labels = []
+    @music_album_data = MusicManager.new
+    load_data
   end
 
   include BookModule
@@ -23,4 +26,8 @@ class App
   include GenreModule
   include AuthorModule
   include LabelModule
+
+  def load_data
+    @songs = @music_album_data.load_music_album
+  end
 end

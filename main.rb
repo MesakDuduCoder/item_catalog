@@ -3,34 +3,12 @@ require_relative 'app'
 module Main
   def self.add_book(app)
     puts "\n"
-    publisher = nil
-    cover_state = nil
-    publish_date = nil
-  
-    loop do
-      puts 'Who is the publisher [Enter Publisher Name]:'
-      publisher = gets.chomp
-      break unless publisher.empty?
-      puts 'Please enter a value for the publisher.'
-    end
-  
-    loop do
-      puts 'What Is the cover\'s state like? [Enter good or bad]:'
-      cover_state = gets.chomp.downcase
-      if cover_state == "good" || cover_state == "bad"
-        break
-      else
-        puts 'Please enter "good" or "bad" for the cover state.'
-      end
-    end
-  
-    loop do
-      puts 'When was the book published [Enter date format year/month/date]:'
-      publish_date = gets.chomp
-      break unless publish_date.empty?
-      puts 'Please enter a value for the publish date.'
-    end
-  
+    puts 'Who is the publisher [Enter Publisher Name]:'
+    publisher = gets.chomp
+    puts 'What Is the cover\'s state like? [Enter good or bad]:'
+    cover_state = gets.chomp
+    puts 'When was the book published [Enter date format year/month/date]:'
+    publish_date = gets.chomp
     app.create_book(publisher, cover_state, publish_date)
   end
 
@@ -55,9 +33,7 @@ module Main
       list_options
       option = gets.chomp.to_i
       options = {
-        1 => -> { app.list_books },
-        2 => -> { app.list_games},
-        3 => -> { app.list_musicalbums },
+        1 => -> { app.list_books }, 2 => -> { app.list_games }, 3 => -> { app.list_musicalbums },
         4 => -> { app.list_genres },
         5 => -> { app.list_authors },
         6 => -> { app.list_labels },

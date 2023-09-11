@@ -5,7 +5,6 @@ require_relative 'modules/genre_module'
 require_relative 'modules/author_module'
 require_relative 'modules/label_module'
 
-
 class App
   attr_accessor :books, :games, :music, :genre, :author, :label
 

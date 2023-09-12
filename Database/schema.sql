@@ -9,7 +9,7 @@ CREATE TABLE Book (
   archived BOOLEAN,
   publisher VARCHAR(150),
   cover_state VARCHAR(200),
-  FOREIGN KEY(item_id) REFERENCES Items(id)
+  FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 
 CREATE TABLE Labels (
@@ -17,7 +17,7 @@ CREATE TABLE Labels (
   item_id INTEGER,
   title VARCHAR(150),
   color VARCHAR(100),
-  FOREIGN KEY(item_id) REFERENCES Items(id)
+  FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 
 CREATE TABLE Author (
@@ -31,7 +31,7 @@ CREATE TABLE Game (
   item_id INTEGER,
   last_played_date DATE NOT NULL,
   multiplayer BOOLEAN NOT NULL,
-  FOREIGN KEY(item_id) REFERENCES Items(id)
+  FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 
 CREATE TABLE MusicAlbum (
@@ -39,6 +39,13 @@ CREATE TABLE MusicAlbum (
   item_id INTEGER,
   on_spotify BOOLEAN,
   publish_date DATE,
-  FOREIGN KEY(item_id) REFERENCES Items(id)
+  FOREIGN KEY(item_id) REFERENCES Item(id)
+);
+
+CREATE TABLE Genre (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name VARCHAR(150),
+  item_id INTEGER,
+  FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 

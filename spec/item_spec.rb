@@ -1,5 +1,6 @@
 require_relative '../classes/item'
 require_relative '../classes/Game/Author'
+require_relative '../classes/Book/label'
 
 describe Item do
   before :each do
@@ -11,6 +12,12 @@ describe Item do
       author = Author.new('George', 'Martin')
       @item.author = author
       expect(author.items).to eq([@item])
+    end
+
+    it 'test label method' do
+      label = Label.new('The Shawshank Redemption', 'Red')
+      @item.label = label
+      expect(label.items).to eq([@item])
     end
 
     it 'test of can_be_archived? method' do

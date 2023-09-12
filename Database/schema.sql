@@ -19,3 +19,18 @@ CREATE TABLE Labels (
   color VARCHAR(100),
   FOREIGN KEY(item_id) REFERENCES Items(id)
 );
+
+CREATE TABLE Author (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50)
+);
+
+CREATE TABLE Game (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item_id INTEGER,
+  last_played_date DATE NOT NULL,
+  multiplayer BOOLEAN NOT NULL,
+  FOREIGN KEY(item_id) REFERENCES Items(id)
+);
+

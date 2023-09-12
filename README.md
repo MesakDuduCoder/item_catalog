@@ -9,6 +9,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Video presentation](#video-presentation)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -33,6 +34,12 @@ In **Catalog of my things** project, we created a console app that will help use
 ### Tech Stack <a name="tech-stack"></a>
 
 - <a href="https://rubyinstaller.org/downloads/">Interactive Ruby</a>
+
+<!-- prsentation video -->
+
+### Video presentation
+
+[Check out the video presentation](https://drive.google.com/file/d/1NXtQGWcumdDAk_SIcnlNE_WJvseA-6GI/view)
 
 <!-- Features -->
 

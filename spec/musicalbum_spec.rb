@@ -25,4 +25,19 @@ describe MusicAlbum do
       end
     end
   end
+
+  describe '#Should validate user input' do
+    context 'when user inputs publish date' do
+      it 'returns correct published date' do
+        music_album = MusicAlbum.new('1994/05/18', true)
+        expected_date = Date.parse('1994/05/18')
+        expect(music_album.publish_date).to eq(expected_date)
+      end
+
+      it 'returns correct state of on_spotify' do
+        music_album = MusicAlbum.new('1994/05/18', false)
+        expect(music_album.on_spotify).to eq(false)
+      end
+    end
+  end
 end

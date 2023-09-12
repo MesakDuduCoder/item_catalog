@@ -24,6 +24,11 @@
       "publisher": "JK Publishers",
       "cover_state": "Good",
       "publish_date": "2020-08-12"
+    },
+    {
+      "publisher": "Mesak pub",
+      "cover_state": "bad",
+      "publish_date": "2013-04-05"
     }
   ]
 }

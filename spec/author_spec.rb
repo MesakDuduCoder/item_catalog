@@ -1,7 +1,6 @@
 require_relative '../classes/Game/author'
 require_relative '../classes/item'
 
-
 describe Author do
   before :each do
     @author = Author.new('George', 'Martin')

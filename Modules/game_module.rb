@@ -11,8 +11,8 @@ module GameModule
       puts 'There are no games'
     else
       @games.each_with_index do |game, i|
-        puts "Number: #{i + 1}, Multiplayer: #{game.multiplayer}, last_played_at: #{game.last_played_at},
-        publish_date: #{game.publish_date}"
+        lpa = game.last_played_at
+        puts "#{i + 1}) Multiplayer: #{game.multiplayer}, last played: #{lpa}, published: #{game.publish_date}"
       end
     end
   end

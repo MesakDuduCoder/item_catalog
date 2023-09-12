@@ -11,3 +11,11 @@ CREATE TABLE Book (
   cover_state VARCHAR(200),
   FOREIGN KEY(item_id) REFERENCES Items(id)
 );
+
+CREATE TABLE Labels (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item_id INTEGER,
+  title VARCHAR(150),
+  color VARCHAR(100),
+  FOREIGN KEY(item_id) REFERENCES Items(id)
+);

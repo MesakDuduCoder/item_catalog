@@ -1,6 +1,5 @@
 require_relative '../classes/Music/music_album'
 
-
 describe MusicAlbum do
   describe '#can_be_archived?' do
     context 'Return Boolean based on difference between published date and listed in spotify' do

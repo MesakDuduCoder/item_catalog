@@ -1,7 +1,6 @@
 require_relative '../classes/Music/genre'
 require_relative '../classes/item'
 
-
 describe Genre do
   before :each do
     @genre = Genre.new('Rock')

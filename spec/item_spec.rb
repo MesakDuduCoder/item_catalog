@@ -1,5 +1,5 @@
 require_relative '../classes/item'
-require_relative '../classes/Game/Author'
+require_relative '../classes/Game/author'
 require_relative '../classes/Book/label'
 require_relative '../classes/Music/genre'
 

@@ -1,3 +1,13 @@
 CREATE TABLE Item (
   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 );
+
+CREATE TABLE Book (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item_id INTEGER,
+  publish_date DATE,
+  archived BOOLEAN,
+  publisher VARCHAR(150),
+  cover_state VARCHAR(200),
+  FOREIGN KEY(item_id) REFERENCES Items(id)
+);

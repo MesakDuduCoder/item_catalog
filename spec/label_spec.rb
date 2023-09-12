@@ -13,4 +13,16 @@ describe Book do
       expect(@label.items).to eq([item])
     end
   end
+
+  context "test user inputs" do
+    it 'should return correct value of title' do
+      @label = Label.new('label 1', 'red')
+      expect(@label.title).to eq("label 1")
+    end
+
+    it 'should return correct value of color' do
+      @label = Label.new('label 1', 'red')
+      expect(@label.color).to eq("red")
+    end
+  end
 end

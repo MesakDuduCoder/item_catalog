@@ -1,6 +1,7 @@
 require_relative '../classes/item'
 require_relative '../classes/Game/Author'
 require_relative '../classes/Book/label'
+require_relative '../classes/Music/genre'
 
 describe Item do
   before :each do
@@ -8,6 +9,12 @@ describe Item do
   end
 
   context 'testing methods' do
+    it 'test genre method' do
+      genre = Genre.new('Rock')
+      @item.genre = genre
+      expect(genre.items).to eq([@item])
+    end
+
     it 'test author method' do
       author = Author.new('George', 'Martin')
       @item.author = author

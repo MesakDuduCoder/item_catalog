@@ -23,7 +23,9 @@ CREATE TABLE Labels (
 CREATE TABLE Author (
   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   first_name VARCHAR(50),
-  last_name VARCHAR(50)
+  last_name VARCHAR(50),
+  item_id INTEGER,
+  FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 
 CREATE TABLE Game (
@@ -49,3 +51,9 @@ CREATE TABLE Genre (
   FOREIGN KEY(item_id) REFERENCES Item(id)
 );
 
+CREATE INDEX index_music_album_item_id ON MusicAlbum(item_id);
+CREATE INDEX index_genre_item_id ON Genre(item_id);
+CREATE INDEX index_game_item_id ON Game(item_id);
+CREATE INDEX index_book_item_id ON Book(item_id);
+CREATE INDEX index_labels_item_id ON Labels(item_id);
+CREATE INDEX index_author_item_id ON Author(item_id);

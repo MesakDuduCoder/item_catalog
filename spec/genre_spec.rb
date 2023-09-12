@@ -15,7 +15,7 @@ describe Genre do
     end
   end
 
-  context '#test for genre' do
+  context '#test genre' do
     it 'should return correct name of genre' do
       expect(@genre.name).to eq('Rock')
     end

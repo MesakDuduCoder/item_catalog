@@ -19,4 +19,24 @@ describe Book do
       end
     end
   end
+
+  describe '#Should validate user input' do
+    context 'when user inputs publisher name' do
+      it 'returns correct publisher' do
+        book = Book.new('JK Publishers', 'bad', "2002/01/01")
+        expect(book.publisher).to eq('JK Publishers')
+      end
+
+      it 'when user inputs cover\'s state condition returns correct cover\'s state' do
+        book = Book.new('JK Publishers', 'bad', "2002/01/01")
+        expect(book.cover_state).to eq('bad')
+      end
+
+      it 'when user inputs published date returns correct published date' do
+        book = Book.new('JK Publishers', 'bad', "2002/01/01")
+        expected_date = Date.parse("2002/01/01")
+        expect(book.publish_date).to eq(expected_date)
+      end
+    end
+  end
 end
